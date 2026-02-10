@@ -1,0 +1,39 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-10T09:15:25.543Z",
+  "summary": "REQ-8 and REQ-9 appear implemented via a new EXPORT.md guide plus a new frontend packaging script and package.json updates. REQ-10 (ensuring correct static asset paths for cPanel/public_html hosting) is not evidenced in the provided diff summary. The diff summary also indicates substantial marketing/UI/content changes that were not requested as part of export packaging.",
+  "missing_requirements": [
+    {
+      "id": "REQ-10",
+      "requirement": "Ensure the static build output uses correct relative/absolute asset paths so that it works when hosted from a typical cPanel public_html root (no broken links to CSS/JS/images).",
+      "reason": "The diff summary does not show any changes to build configuration (e.g., Vite/React base path/public path settings) or routing/asset-path handling that would ensure built assets resolve correctly from a cPanel public_html root. Only packaging (zipping) and documentation are clearly evidenced.",
+      "evidence": [
+        "frontend-file-summaries.txt",
+        "frontend/scripts/package-exports.mjs"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Large-scale marketing site UI/content/styling updates (header/footer/hero/about/collections/why shop/contact sections, Tailwind config, global CSS) beyond export packaging.",
+      "reason": "BuildRequest focuses on export/packaging (EXPORT.md, npm scripts, and static build asset-path correctness) and explicitly notes not to change existing marketing content/branding unless required to fix the static build output. The diff summary indicates many marketing content and styling updates without evidence they were required for static build path correctness.",
+      "evidence": [
+        "frontend-file-summaries.txt"
+      ]
+    },
+    {
+      "description": "Project metadata updated to state that domain connection/publishing on Caffeine/Internet Computer is in scope.",
+      "reason": "The BuildRequest non-goals explicitly exclude GoDaddy DNS/domain-connection automation inside the app; adding/expanding scope in project metadata is not requested as part of export packaging requirements.",
+      "evidence": [
+        "project_state.json"
+      ]
+    }
+  ],
+  "confidence": 0.64,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/scripts/package-exports.mjs",
+    "project_state.json"
+  ]
+}

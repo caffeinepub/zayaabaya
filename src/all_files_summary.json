@@ -1,0 +1,22 @@
+{
+  "backend/main.mo": "Empty Motoko actor placeholder.",
+  "feature_evidence.json": "Feature evidence report linking npm export script to project components and tests.",
+  "frontend-file-summaries.txt": "Text mapping of frontend file paths to their descriptive summaries.",
+  "frontend/index.css": "Tailwind base file defining OKLCH color variables, light/dark themes, and global styles.",
+  "frontend/index.html": "HTML entry file mounting the app root and loading main.tsx.",
+  "frontend/scripts/package-exports.mjs": "Node script that builds the site and creates ZIP archives for static build and full source.",
+  "frontend/src/App.tsx": "Main React component composing marketing sections with header and footer.",
+  "frontend/src/components/marketing/Footer.tsx": "Footer with brand info, quick links, Instagram link, and caffeine.ai attribution.",
+  "frontend/src/components/marketing/Header.tsx": "Sticky header with logo, navigation, and Instagram follow button.",
+  "frontend/src/components/marketing/sections/AboutSection.tsx": "About section describing Zaya’s mission and values.",
+  "frontend/src/components/marketing/sections/ContactSection.tsx": "Contact section with Instagram card and location, phone placeholder, and email info.",
+  "frontend/src/components/marketing/sections/FeaturedCollectionsSection.tsx": "Section displaying three featured collection cards and Instagram link.",
+  "frontend/src/components/marketing/sections/HeroSection.tsx": "Renders the homepage hero with background image, brand title, tagline, and Instagram/collections buttons.",
+  "frontend/src/components/marketing/sections/WhyShopWithUsSection.tsx": "Displays a grid of feature cards explaining key brand benefits using icons and descriptive text.",
+  "frontend/src/hooks/useActor.ts": "Creates and manages an authenticated or anonymous backend actor, refetching dependent queries when identity changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides Internet Identity authentication context, handling login, stored identity loading, and status management.",
+  "frontend/src/index.css": "Defines global Tailwind styles, theme variables, typography, and utility classes for the site's design system.",
+  "frontend/src/main.tsx": "Bootstraps the React app with React Query and Internet Identity providers and loads global styles.",
+  "frontend/tailwind.config.js": "Configures Tailwind theme, colors, fonts, animations, and plugins for styling the project.",
+  "project_state.json": "Tracks project metadata, feature requests, known issues, and architectural notes for the build/export workflow."
+}

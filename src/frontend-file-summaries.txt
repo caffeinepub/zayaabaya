@@ -1,0 +1,15 @@
+{
+  "frontend/src/index.css": "Global styles with warm ivory/sand OKLCH color palette for elegant modest fashion brand, custom section padding utilities, and serif typography for headings.",
+  "frontend/tailwind.config.js": "Extended Tailwind configuration with Playfair Display serif font, elegant shadow utilities, and fade-in animation for sophisticated brand presentation.",
+  "frontend/src/App.tsx": "Main application component that composes the complete single-page marketing site with header, hero, about, collections, why shop, contact sections, and footer.",
+  "frontend/src/components/marketing/Header.tsx": "Sticky header component with logo, brand name, navigation links, and prominent Instagram CTA button.",
+  "frontend/src/components/marketing/Footer.tsx": "Footer component with brand identity, quick links, Instagram connection, website URL, copyright, and Caffeine attribution with UTM tracking.",
+  "frontend/src/components/marketing/sections/HeroSection.tsx": "Hero section with updated abaya/hijab themed background image, brand headline, tagline, and dual CTAs for Instagram and collections.",
+  "frontend/src/components/marketing/sections/AboutSection.tsx": "About section with centered layout describing Zaya's mission, values, and commitment to modest fashion quality.",
+  "frontend/src/components/marketing/sections/FeaturedCollectionsSection.tsx": "Collections showcase with three card-based categories (Everyday, Special Occasions, Premium Hijabs) and Instagram link.",
+  "frontend/src/components/marketing/sections/WhyShopWithUsSection.tsx": "Six-feature grid highlighting brand values including quality, design, curation, packaging, customer service, and trust.",
+  "frontend/src/components/marketing/sections/ContactSection.tsx": "Contact section with Instagram card and contact information card displaying Location (Muthamil Nagar, Pammal, Chennai), Email (zayaabaya1417@gmail.com), and placeholder Phone field.",
+  "EXPORT.md": "Comprehensive English guide explaining how to install dependencies, build the project, create ZIP archives for both full source and static build, and upload the static build to cPanel public_html.",
+  "frontend/scripts/package-exports.mjs": "Node.js packaging script that builds production static site and creates two ZIP files (source code excluding node_modules/dist, and static build) in frontend/exports/ directory.",
+  "frontend/package.json": "Updated package.json with new \"package:exports\" script and archiver dependency for creating export ZIP files."
+}

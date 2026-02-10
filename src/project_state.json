@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Website project with requirement to export full source code and provide a cPanel-compatible static HTML version; domain connection/publishing on Caffeine/Internet Computer is also in scope.",
+  "architectural_notes": [
+    "Current hosting context is Caffeine/Internet Computer (icp0.io), which differs from cPanel hosting; static export may be needed for cPanel compatibility."
+  ],
+  "known_issues": [
+    "Caffeine site is currently in draft mode; user needs to publish/make live to obtain the icp0.io link for domain DNS connection."
+  ],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-add-npm-scripts-to-generate-a-production-static-build-suitable-for-cpanel-upload-and-to-package-both-deliverables-full-source-zip-and-static-build-zip-in-a-single-command",
+      "title": "Add npm scripts to generate a production static build suitable for cPanel upload and to package both deliverables (full source ZIP and static-build ZIP) in a single command.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Provide a downloadable ZIP of the entire website React project/source code.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Convert the whole website into a static HTML/CSS/JS package suitable for uploading to cPanel (option 3 = both).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add an in-repo export guide (EXPORT.md) that explains how to obtain (1) the full React source code as a ZIP and (2) a cPanel-ready static HTML/CSS/JS build, using clear step-by-step instructions in English.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Ensure the static build output uses correct relative/absolute asset paths so that it works when hosted from a typical cPanel public_html root (no broken links to CSS/JS/images).",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "status": "pending"
+    }
+  ],
+  "projectName": "zayaabaya",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

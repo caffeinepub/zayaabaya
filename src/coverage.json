@@ -1,0 +1,60 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-10T09:15:25.545Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 3,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-10",
+        "summary": "Ensure the static build output uses correct relative/absolute asset paths so that it works when hosted from a typical cPanel public_html root (no broken links to CSS/JS/images).",
+        "status": "missing",
+        "plannedFiles": [
+          "frontend/public/assets/generated/abaya-store-hero-abaya-hijab.dim_1920x1080.png",
+          "frontend/public/assets/generated/zaya-logo.dim_512x512.png",
+          "frontend/src/components/marketing/sections/HeroSection.tsx",
+          "frontend/src/components/marketing/Header.tsx",
+          "frontend/src/components/marketing/Footer.tsx"
+        ],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-8",
+        "summary": "Add an in-repo export guide (EXPORT.md) that explains how to obtain (1) the full React source code as a ZIP and (2) a cPanel-ready static HTML/CSS/JS build, using clear step-by-step instructions in English.",
+        "status": "missing",
+        "plannedFiles": [
+          "frontend/EXPORT.md"
+        ],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-9",
+        "summary": "Add npm scripts to generate a production static build suitable for cPanel upload and to package both deliverables (full source ZIP and static-build ZIP) in a single command.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/package.json",
+          "frontend/scripts/package-exports.mjs"
+        ],
+        "matchedFiles": [
+          "frontend/scripts/package-exports.mjs"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/scripts/package-exports.mjs",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

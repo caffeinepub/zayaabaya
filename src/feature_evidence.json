@@ -1,0 +1,23 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-npm-scripts-to-generate-a-production-static-build-suitable-for-cpanel-upload-and-to-package-both-deliverables-full-source-zip-and-static-build-zip-in-a-single-command",
+      "featureTitle": "Add npm scripts to generate a production static build suitable for cPanel upload and to package both deliverables (full source ZIP and static-build ZIP) in a single command.",
+      "files": [
+        "frontend/scripts/package-exports.mjs"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

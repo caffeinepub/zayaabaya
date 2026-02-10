@@ -1,0 +1,88 @@
+{
+  "kind": "build_request",
+  "title": "Add export packaging: full source ZIP + cPanel-ready static HTML build",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-8",
+      "text": "Add an in-repo export guide (EXPORT.md) that explains how to obtain (1) the full React source code as a ZIP and (2) a cPanel-ready static HTML/CSS/JS build, using clear step-by-step instructions in English.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "i need whole  website file how to download i am not going to upload to cpannal'",
+          "3"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Repository contains an EXPORT.md at the project root (or a clearly discoverable docs file) written in English.",
+        "EXPORT.md includes steps to: install dependencies, build the project, locate the build output folder, and create ZIP archives for both the full source and the static build.",
+        "EXPORT.md explicitly states what folder(s) to upload to cPanel for the static site (the build output directory) and that the React source itself is not directly uploadable without building."
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Add npm scripts to generate a production static build suitable for cPanel upload and to package both deliverables (full source ZIP and static-build ZIP) in a single command.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Choose 1, 2, or 3 and I will deliver it immediately.",
+          "3"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Project defines scripts to: (a) build the frontend for production, (b) create a ZIP of the build output, and (c) create a ZIP of the full project source (excluding node_modules and build artifacts).",
+        "Running the packaging script(s) produces two ZIP files with clear names (one for source, one for static build) in a documented output location.",
+        "The static build output contains an index.html and asset files that can be served by a basic static host (like cPanel) without server-side rendering."
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Ensure the static build output uses correct relative/absolute asset paths so that it works when hosted from a typical cPanel public_html root (no broken links to CSS/JS/images).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Convert your whole website into HTML files for cPanel",
+          "3"
+        ]
+      },
+      "acceptanceCriteria": [
+        "After building, opening the generated index.html via a static server shows the same single-page marketing site layout (Header, Hero, About, Collections, Why Shop With Us, Contact, Footer).",
+        "Hero background and logo load correctly from the generated/static assets (e.g., /assets/generated/*) without 404s in the built output.",
+        "Anchor navigation (#about, #collections, #contact) works in the built static output."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or any files under frontend/src/components/ui.",
+    "Keep the backend as a single Motoko actor; do not add backend dependencies for export/packaging.",
+    "Do not introduce third-party authentication beyond Internet Identity (no Auth0, Google, etc.)."
+  ],
+  "nonGoals": [
+    "Do not implement GoDaddy DNS/domain-connection automation inside the app.",
+    "Do not add dynamic backend features (orders, cart, database, admin panel) as part of this request.",
+    "Do not change existing marketing content/branding unless required to fix the static build output."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

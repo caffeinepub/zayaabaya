@@ -1,0 +1,80 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Export packaging for source ZIP and cPanel-ready static build",
+  "requirements": [
+    {
+      "id": "REQ-8",
+      "summary": "Add an in-repo EXPORT.md guide describing how to zip the full source and a cPanel-ready static build.",
+      "acceptanceCriteria": [
+        "Repository contains an EXPORT.md at the project root (or a clearly discoverable docs file) written in English.",
+        "EXPORT.md includes steps to: install dependencies, build the project, locate the build output folder, and create ZIP archives for both the full source and the static build.",
+        "EXPORT.md explicitly states what folder(s) to upload to cPanel for the static site (the build output directory) and that the React source itself is not directly uploadable without building."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/EXPORT.md",
+          "operation": "create",
+          "description": "Create an English export guide explaining: dependency install, production build, where the static output is generated (e.g., dist/), how to create a ZIP of (1) full source (excluding node_modules and build output) and (2) the static build, and which folder to upload to cPanel public_html. Reference the npm scripts added in REQ-9. (Using build-template-react conventions; verify the component's usage instructions before implementing.)"
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Add npm scripts to build and package two ZIP deliverables (full source ZIP + static-build ZIP) via a single command.",
+      "acceptanceCriteria": [
+        "Project defines scripts to: (a) build the frontend for production, (b) create a ZIP of the build output, and (c) create a ZIP of the full project source (excluding node_modules and build artifacts).",
+        "Running the packaging script(s) produces two ZIP files with clear names (one for source, one for static build) in a documented output location.",
+        "The static build output contains an index.html and asset files that can be served by a basic static host (like cPanel) without server-side rendering."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/package.json",
+          "operation": "create",
+          "description": "Add/define npm scripts for production build and packaging: one script for the production static build, and a single command that generates two ZIPs (source + static build) into a documented output folder (e.g., frontend/exports/). Ensure source ZIP excludes node_modules and build artifacts. Align script naming/structure with build-template-react. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/scripts/package-exports.mjs",
+          "operation": "create",
+          "description": "Implement a Node-based packaging script that (1) triggers/assumes a completed production build, (2) zips the build output directory into a clearly named static-build ZIP, and (3) zips the project source into a clearly named source ZIP while excluding node_modules and build output. Use deterministic output folder and filenames as documented in EXPORT.md."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Ensure the production static build uses asset paths and anchor navigation that work when hosted from cPanel public_html root.",
+      "acceptanceCriteria": [
+        "After building, opening the generated index.html via a static server shows the same single-page marketing site layout (Header, Hero, About, Collections, Why Shop With Us, Contact, Footer).",
+        "Hero background and logo load correctly from the generated/static assets (e.g., /assets/generated/*) without 404s in the built output.",
+        "Anchor navigation (#about, #collections, #contact) works in the built static output."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/abaya-store-hero-abaya-hijab.dim_1920x1080.png",
+          "operation": "create",
+          "description": "Add the generated hero background image as a static public asset at this exact path so production builds can serve it without broken links."
+        },
+        {
+          "path": "frontend/public/assets/generated/zaya-logo.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated logo image as a static public asset at this exact path so production builds can serve it without broken links."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Verify the hero background image reference points to the public static asset path (frontend/public/assets/generated/abaya-store-hero-abaya-hijab.dim_1920x1080.png) and remains compatible with production static builds hosted at the cPanel public_html root. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/marketing/Header.tsx",
+          "operation": "modify",
+          "description": "Verify the header logo reference points to the public static asset path (frontend/public/assets/generated/zaya-logo.dim_512x512.png) and remains compatible with production static builds hosted at the cPanel public_html root. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/marketing/Footer.tsx",
+          "operation": "modify",
+          "description": "Verify the footer logo reference points to the public static asset path (frontend/public/assets/generated/zaya-logo.dim_512x512.png) and remains compatible with production static builds hosted at the cPanel public_html root. Verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}
